@@ -1,8 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Авторизация";
+    Layout = "~/Views/Shared/_Auth.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p> gfcgfыцвакпенгш <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> 
-</div>
+<form id="formauth" method="post">
+    <fieldset>
+        <h1 style="margin-left: auto; margin-right: auto;">
+            Авторизация
+        </h1>
+        <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: 24px" class="form-label mt-4">Логин</label>
+            <input type="text" style="font-size: 20px" name="log" class="form-control" placeholder="Введите логин">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" style="font-size: 24px" class="form-label mt-4">Пароль</label>
+            <input type="password" style="font-size: 20px" name="pass" class="form-control" placeholder="Введите пароль">
+        </div>
+        <br />
+        <button type="submit" id="btnauth" class="btn btn-primary">
+            Войти
+        </button>
+    </fieldset>
+    <p>
+        <label>@ViewBag.H</label>
+    </p>
+</form>

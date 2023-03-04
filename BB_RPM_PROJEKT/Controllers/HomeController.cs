@@ -18,7 +18,36 @@ namespace BB_RPM_PROJEKT.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(string log, string pass)
+        {
+            try
+            {
+                return Redirect("/Home/News");
+            }
+            catch
+            {
+                ViewBag.H = "error";
+            }
+            return View();
+        }
+
+        public IActionResult Disciplins()
+        {
+            return View();
+        }
+
+        public IActionResult News()
+        {
+            return View();
+        }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
+        public IActionResult Raspisanie()
         {
             return View();
         }

@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#formauth {
+    display: block;
+    margin: auto;
+    width: 500px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+#btnauth {
+    font-size: 20px;
+    width: 200px;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
