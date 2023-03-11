@@ -2,3 +2,29 @@
     ViewData["Title"] = "Расписание";
 }
 
+<form method="post">
+    <div style="margin-top: 40px">
+        <h1 style="margin-left: auto; margin-right: auto;">
+            Расписание
+        </h1>
+        <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: 24px" class="form-label mt-4">Группа</label>
+            <select class="form-select" style="font-size: 20px" id="exampleSelect1" name="gruppa">
+                <option>4332</option>
+                <option>4333</option>
+                <option>4335</option>
+                <option>4337</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" style="font-size: 24px" class="form-label mt-4">Чётность недели</label>
+            <select class="form-select" style="font-size: 20px" id="exampleSelect1" name="chetnost">
+                <option>чётная</option>
+                <option>нечётная</option>
+            </select>
+        </div>
+        <button type="submit" style="font-size: 20px; width: 250px; margin-top: 30px" class="btn btn-primary">
+            Показать расписание
+        </button>
+    </div>
+</form>

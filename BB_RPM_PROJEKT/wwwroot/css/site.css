@@ -32,8 +32,15 @@ body {
     font-size: 20px;
     width: 200px;
     position: absolute;
-    top: 110%;
+    top: 114%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+}
+
+#errorlabel {
+    font-weight: bold;
+    color: red;
+    font-size: 16px;
+    margin-left: 30%;
 }

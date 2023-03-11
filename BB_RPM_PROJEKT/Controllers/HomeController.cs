@@ -23,7 +23,14 @@ namespace BB_RPM_PROJEKT.Controllers
         {
             try
             {
-                return Redirect("/Home/News");
+                if (log != "" && log != null && pass != "" && pass != null)
+                {
+                    return Redirect("/Home/News");
+                }
+                else
+                {
+                    ViewBag.H = "Ошибка. Введите данные";
+                }
             }
             catch
             {
@@ -48,6 +55,28 @@ namespace BB_RPM_PROJEKT.Controllers
         }
 
         public IActionResult Raspisanie()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Raspisanie(string gruppa, string chetnost)
+        {
+            try
+            {
+                if (gruppa == "4335" && chetnost == "нечётная")
+                {
+                    return Redirect("/Home/nechet4335");
+                }
+            }
+            catch
+            {
+
+            }
+            return View();
+        }
+
+        public IActionResult nechet4335()
         {
             return View();
         }
