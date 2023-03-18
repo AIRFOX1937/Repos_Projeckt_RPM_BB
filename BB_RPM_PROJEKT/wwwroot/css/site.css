@@ -12,6 +12,44 @@ html {
     margin-left: 60px;
 }
 
+.vidis img {
+    width: 55px;
+    height: 60px;
+}
+
+.vidis label {
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+.vidi img {
+    width: 45px;
+    height: 55px;
+}
+
+.vidi label {
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+.predmet {
+    height: auto;
+    background: #f8f8f8;
+    width: auto;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.container a {
+    text-decoration: none;
+    color: black;
+}
+
 @media (max-width: 1400px) {
     .minidiv {
         display: block;

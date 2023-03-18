@@ -25,7 +25,14 @@ namespace BB_RPM_PROJEKT.Controllers
             {
                 if (log != "" && log != null && pass != "" && pass != null)
                 {
-                    return Redirect("/Home/News");
+                    if (log == "student")
+                    {
+                        return Redirect("/Home/News");
+                    }
+                    else if (log == "teacher")
+                    {
+                        return Redirect("/Home/NewsT");
+                    }
                 }
                 else
                 {
@@ -44,7 +51,17 @@ namespace BB_RPM_PROJEKT.Controllers
             return View();
         }
 
+        public IActionResult DisciplinsT()
+        {
+            return View();
+        }
+
         public IActionResult News()
+        {
+            return View();
+        }
+
+        public IActionResult NewsT()
         {
             return View();
         }
@@ -59,12 +76,42 @@ namespace BB_RPM_PROJEKT.Controllers
             return View();
         }
 
+        public IActionResult RaspisanieT()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public IActionResult Raspisanie(string gruppa, string chetnost)
+        public IActionResult Raspisanie(string gruppa, string chetnost1, string fio, string chetnost2)
         {
             try
             {
-                if (gruppa == "4335" && chetnost == "нечётная")
+                if (gruppa == "4335" && chetnost1 == "нечётная")
+                {
+                    return Redirect("/Home/nechet4335");
+                }
+                if (fio == "Петров Петр Петрович" && chetnost2 == "нечётная")
+                {
+                    return Redirect("/Home/nechet4335");
+                }
+            }
+            catch
+            {
+
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RaspisanieT(string gruppa, string chetnost1, string fio, string chetnost2)
+        {
+            try
+            {
+                if (gruppa == "4335" && chetnost1 == "нечётная")
+                {
+                    return Redirect("/Home/nechet4335");
+                }
+                if (fio == "Петров Петр Петрович" && chetnost2 == "нечётная")
                 {
                     return Redirect("/Home/nechet4335");
                 }
@@ -77,6 +124,16 @@ namespace BB_RPM_PROJEKT.Controllers
         }
 
         public IActionResult nechet4335()
+        {
+            return View();
+        }
+
+        public IActionResult ikg()
+        {
+            return View();
+        }
+
+        public IActionResult ikg_l()
         {
             return View();
         }
