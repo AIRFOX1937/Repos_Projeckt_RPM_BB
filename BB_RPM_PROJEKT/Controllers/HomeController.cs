@@ -1,5 +1,7 @@
-﻿using BB_RPM_PROJEKT.Models;
+﻿using BB_RPM_PROJEKT.AdditionalClasses;
+using BB_RPM_PROJEKT.Models;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using System.Diagnostics;
 
 namespace BB_RPM_PROJEKT.Controllers
@@ -21,27 +23,65 @@ namespace BB_RPM_PROJEKT.Controllers
         [HttpPost]
         public IActionResult Index(string log, string pass)
         {
+            MySqlConnection conn = MySqlDb.GetDBConnection();
+            conn.Open();
             try
             {
-                if (log != "" && log != null && pass != "" && pass != null)
+                string sql = "select * from users where login_u = @login";
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+
+                cmd.Parameters.AddWithValue("@login", log);
+
+                var reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    if (log == "student")
+                    while (reader.Read())
                     {
-                        return Redirect("/Home/News");
-                    }
-                    else if (log == "teacher")
-                    {
-                        return Redirect("/Home/NewsT");
+                        if (log == reader.GetString(1) && pass == reader.GetString(2))
+                        {
+                            if(Convert.ToInt32(reader.GetString(3)) == 2)
+                            {
+                                return Redirect("/Home/NewsT");
+                            }
+                            if (Convert.ToInt32(reader.GetString(3)) == 2)
+                            {
+                                return Redirect("/Home/News");
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.H = "Неправильный логин или пароль";
+                            return View();
+                        }
                     }
                 }
-                else
-                {
-                    ViewBag.H = "Ошибка. Введите данные";
-                }
+                //if (log != "" && log != null && pass != "" && pass != null)
+                //{
+                //    if (log == "student")
+                //    {
+                //        return Redirect("/Home/News");
+                //    }
+                //    else if (log == "teacher")
+                //    {
+                //        return Redirect("/Home/NewsT");
+                //    }
+                //}
+                //else
+                //{
+                //    ViewBag.H = "Ошибка. Введите данные";
+                //}
             }
             catch
             {
-                ViewBag.H = "error";
+                ViewBag.H = "Ошибка";
+            }
+            finally
+            {
+                conn.Close();
             }
             return View();
         }
@@ -134,6 +174,11 @@ namespace BB_RPM_PROJEKT.Controllers
         }
 
         public IActionResult ikg_l()
+        {
+            return View();
+        }
+
+        public IActionResult ikg_prep_ikg()
         {
             return View();
         }
