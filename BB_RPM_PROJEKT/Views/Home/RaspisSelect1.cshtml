@@ -1,0 +1,191 @@
+﻿@{
+    ViewData["Title"] = "Расписание";
+    Layout = "~/Views/Shared/_Auth.cshtml";
+}
+@model Tuple<List<BBLib.Models.Raspi1>, List<BBLib.Models.Raspi1>, List<BBLib.Models.Raspi1>, List<BBLib.Models.Raspi1>, List<BBLib.Models.Raspi1>, List<BBLib.Models.Raspi1>>
+
+<div style="margin-top: 50px">
+    <h4>@ViewBag.Gr, @ViewBag.Ch</h4>
+</div>
+<div style="margin-top: 40px">
+    <div style="background-color: #0d6efd; height: 35px; text-align:center; width: 170px;">
+        <label style="font-size: 20px; font-weight: bold; color: white">Понедельник</label>
+    </div>
+    <table class="table table-hover" style="font-size:18px; margin-top: 20px; margin-bottom: 30px">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Дата</th>
+                <th>Группа</th>
+                <th>Дисциплина</th>
+                <th>Вид занятия</th>
+                <th>Аудитория</th>
+                <th>Здание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model.Item1)
+            {
+                <tr>
+                    <td>@schedule.NameT</td>
+                    <td>@schedule.DateR</td>
+                    <td>@schedule.NumG</td>
+                    <td>@schedule.NameD</td>
+                    <td>@schedule.NameV</td>
+                    <td>@schedule.AudR</td>
+                    <td>@schedule.ZdR</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="background-color: #0d6efd; height: 35px; text-align:center; width: 170px; margin-bottom: 25px">
+        <label style="font-size: 20px; font-weight: bold; color: white">Вторник</label>
+    </div>
+    <table class="table table-hover" style="font-size:18px; margin-bottom: 30px">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Дата</th>
+                <th>Группа</th>
+                <th>Дисциплина</th>
+                <th>Вид занятия</th>
+                <th>Аудитория</th>
+                <th>Здание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model.Item2)
+            {
+                <tr>
+                    <td>@schedule.NameT</td>
+                    <td>@schedule.DateR</td>
+                    <td>@schedule.NumG</td>
+                    <td>@schedule.NameD</td>
+                    <td>@schedule.NameV</td>
+                    <td>@schedule.AudR</td>
+                    <td>@schedule.ZdR</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="background-color: #0d6efd; height: 35px; text-align:center; width: 170px; margin-bottom: 25px">
+        <label style="font-size: 20px; font-weight: bold; color: white">Среда</label>
+    </div>
+    <table class="table table-hover" style="font-size:18px; margin-bottom: 30px">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Дата</th>
+                <th>Группа</th>
+                <th>Дисциплина</th>
+                <th>Вид занятия</th>
+                <th>Аудитория</th>
+                <th>Здание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model.Item3)
+            {
+                <tr>
+                    <td>@schedule.NameT</td>
+                    <td>@schedule.DateR</td>
+                    <td>@schedule.NumG</td>
+                    <td>@schedule.NameD</td>
+                    <td>@schedule.NameV</td>
+                    <td>@schedule.AudR</td>
+                    <td>@schedule.ZdR</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="background-color: #0d6efd; height: 35px; text-align:center; width: 170px; margin-bottom: 25px">
+        <label style="font-size: 20px; font-weight: bold; color: white">Четверг</label>
+    </div>
+    <table class="table table-hover" style="font-size:18px; margin-bottom: 30px">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Дата</th>
+                <th>Группа</th>
+                <th>Дисциплина</th>
+                <th>Вид занятия</th>
+                <th>Аудитория</th>
+                <th>Здание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model.Item4)
+            {
+                <tr>
+                    <td>@schedule.NameT</td>
+                    <td>@schedule.DateR</td>
+                    <td>@schedule.NumG</td>
+                    <td>@schedule.NameD</td>
+                    <td>@schedule.NameV</td>
+                    <td>@schedule.AudR</td>
+                    <td>@schedule.ZdR</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="background-color: #0d6efd; height: 35px; text-align:center; width: 170px; margin-bottom: 5px">
+        <label style="font-size: 20px; font-weight: bold; color: white">Пятница</label>
+    </div>
+    <table class="table table-hover" style="font-size:18px; margin-bottom: 30px">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Дата</th>
+                <th>Группа</th>
+                <th>Дисциплина</th>
+                <th>Вид занятия</th>
+                <th>Аудитория</th>
+                <th>Здание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model.Item5)
+            {
+                <tr>
+                    <td>@schedule.NameT</td>
+                    <td>@schedule.DateR</td>
+                    <td>@schedule.NumG</td>
+                    <td>@schedule.NameD</td>
+                    <td>@schedule.NameV</td>
+                    <td>@schedule.AudR</td>
+                    <td>@schedule.ZdR</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="background-color: #0d6efd; height: 35px; text-align:center; width: 170px; margin-bottom: 25px">
+        <label style="font-size: 20px; font-weight: bold; color: white">Суббота</label>
+    </div>
+    <table class="table table-hover" style="font-size:18px; margin-bottom: 30px">
+        <thead>
+            <tr>
+                <th>Время</th>
+                <th>Дата</th>
+                <th>Группа</th>
+                <th>Дисциплина</th>
+                <th>Вид занятия</th>
+                <th>Аудитория</th>
+                <th>Здание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model.Item6)
+            {
+                <tr>
+                    <td>@schedule.NameT</td>
+                    <td>@schedule.DateR</td>
+                    <td>@schedule.NumG</td>
+                    <td>@schedule.NameD</td>
+                    <td>@schedule.NameV</td>
+                    <td>@schedule.AudR</td>
+                    <td>@schedule.ZdR</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

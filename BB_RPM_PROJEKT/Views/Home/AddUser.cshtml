@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Пользователи";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.User
+
+<form asp-action="AddU" method="post" style="margin-top: 100px">
+    <div class="form-group">
+        <label asp-for="LoginU" style="font-size:20px">Логин:</label>
+        <input asp-for="LoginU" style="font-size:20px" name="lo" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="PassU" style="font-size:20px">Пароль:</label>
+        <input asp-for="PassU" style="font-size:20px" name="pa" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="RoleU" style="font-size:20px">Роль:</label>
+        <select asp-for="RoleU" asp-items="@ViewBag.RoleList" style="font-size:20px" name="ro" class="form-control"></select>
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="FioU" style="font-size:20px">ФИО:</label>
+        <input asp-for="FioU" style="font-size:20px" name="fi" class="form-control"/>
+    </div>
+    <div class="form-group" style="margin-top: 20px" na>
+        <label asp-for="GroupS" style="font-size:20px">Группа (если студент):</label>
+        <select asp-for="GroupS" asp-items="@ViewBag.GroupList" style="font-size:20px" name="gr" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Добавить</button>
+</form>

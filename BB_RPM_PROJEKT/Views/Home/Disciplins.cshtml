@@ -2,60 +2,17 @@
     ViewData["Title"] = "Дисциплины";
 }
 
-<div style="margin-top: 40px">
-    <h1 style="margin-left: auto; margin-right: auto;">
+<div class="container" style="margin-top: 40px">
+    <h1 style="margin-left: auto; margin-right: auto; margin-bottom: 30px;">
         Дисциплины
     </h1>
-    <div class="container" style="margin-top: 40px">
-        <a href="/Home/ikg">
+    @model List<BBLib.Models.GrDi>
+    <div class="container">
+        @foreach (var disc in Model)
+        {
             <div class="predmet">
-                Инженерная компьютерная графика
+                <a style="font-weight: bold; font-size: 22px" name="btn" asp-route-id="@disc.NameD" asp-action="Papki">@disc.NameD</a>
             </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Инструментальные средства разработки программного обеспечения
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Математическое моделирование
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Основы философии
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Основы экономики
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Поддержка и тестирование программных модулей
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Разработка мобильных приложений
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Разработка программных модулей
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Системное программирование
-            </div>
-        </a>
-        <a href="/Home/ikg">
-            <div class="predmet">
-                Технология разработки программного обеспечения
-            </div>
-        </a>
+        }
     </div>
 </div>

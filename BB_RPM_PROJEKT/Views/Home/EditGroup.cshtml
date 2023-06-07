@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Группы";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.Group
+
+<form asp-action="SaveG" method="post" style="margin-top: 100px">
+    <div class="form-group" style="visibility: hidden">
+        <label asp-for="IdG" style="font-size:20px">Id:</label>
+        <input asp-for="IdG" style="font-size:20px" name="id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NumG" style="font-size:20px">Номер:</label>
+        <input asp-for="NumG" style="font-size:20px" name="nu" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Обновить</button>
+</form>

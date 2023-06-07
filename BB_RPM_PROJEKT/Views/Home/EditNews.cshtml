@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Новости";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.News
+
+<form asp-action="SaveN" method="post" style="margin-top: 100px">
+    <div class="form-group" style="visibility: hidden">
+        <label asp-for="Id" style="font-size:20px">Id:</label>
+        <input asp-for="Id" style="font-size:20px" name="id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Img" style="font-size:20px">Фото:</label>
+        <input asp-for="Img" style="font-size:20px" name="im" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="Zag" style="font-size:20px">Заголовок:</label>
+        <input asp-for="Zag" style="font-size:20px" name="za" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="Txt" style="font-size:20px">Краткий текст:</label>
+        <textarea asp-for="Txt" style="font-size:20px" name="tx" class="form-control"></textarea>
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="Txt1" style="font-size:20px">Полный текст:</label>
+        <textarea asp-for="Txt1" style="font-size:20px" name="tx1" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Обновить</button>
+</form>

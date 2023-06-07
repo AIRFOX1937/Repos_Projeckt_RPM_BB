@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Преподаватели и Дисциплины";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.UD
+
+<form asp-action="AddUsDi" method="post" style="margin-top: 100px">
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="IdU" style="font-size:20px">Преподаватель:</label>
+        <select asp-for="IdU" asp-items="@ViewBag.GroupList" style="font-size:20px" name="gr" class="form-control"></select>
+    </div>
+    <div class="form-group" style="margin-top: 20px" na>
+        <label asp-for="IdD" style="font-size:20px">Дисциплина:</label>
+        <select asp-for="IdD" asp-items="@ViewBag.DiscList" style="font-size:20px" name="di" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Добавить</button>
+</form>

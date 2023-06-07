@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Дисциплины";
+}
+
+<div class="container" style="margin-top: 40px">
+    <h1 style="margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+        @ViewBag.D: @ViewBag.V
+    </h1>
+   @model Tuple<List<BBLib.Models.Doki1>, List<BBLib.Models.Doki1>>
+    <div class="container" style="margin-top: 40px">
+        @foreach (var dok in Model.Item1)
+        {
+            <div style="width: 1000px; margin-bottom: 20px">
+                <a href="@dok.SsilkaD">
+                    <div class="vidis">
+                        <img src="https://i.ibb.co/g9JGSNR/doki.png" />
+                        <label>@dok.NameDo</label>
+                    </div>
+                </a>
+            </div>
+        }
+        @foreach (var dok in Model.Item2)
+        {
+            <label style="visibility: collapse">@dok.IdDo</label>
+            <div style="width: 1000px; margin-bottom: 20px">
+                <a asp-action="AddOtchet" asp-route-id="@dok.IdDo">
+                    <div class="vidis">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1414/1414412.png" />
+                        <label>@dok.NameDo</label>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

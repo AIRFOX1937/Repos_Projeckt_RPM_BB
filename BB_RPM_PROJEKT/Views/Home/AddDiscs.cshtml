@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Дисциплины";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.Disc
+
+<form asp-action="AddD" method="post" style="margin-top: 100px">
+    <div class="form-group">
+        <label asp-for="NameD" style="font-size:20px">Название дисциплины:</label>
+        <input asp-for="NameD" style="font-size:20px" name="na" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Добавить</button>
+</form>

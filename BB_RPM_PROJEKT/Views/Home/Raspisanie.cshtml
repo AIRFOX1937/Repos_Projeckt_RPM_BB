@@ -2,58 +2,60 @@
     ViewData["Title"] = "Расписание";
 }
 
-
-<div style="background-color: #0d6efd; height: 35px; text-align:center; width: 120px; color: white; font-size: 20px;
-        margin-top: 30px; margin-left: auto; margin-right: 0;">
-    <label>чётная</label>
-</div>
-<form method="post">
+@model Tuple<List<BBLib.Models.Group>, List<BBLib.Models.Chet>, List<BBLib.Models.User>>
+<form asp-action="RaspisSelect" method="get">
     <div style="margin-top: 40px">
         <h1 style="margin-left: auto; margin-right: auto;">
             Расписание группы
         </h1>
         <div class="form-group">
             <label for="exampleInputEmail1" style="font-size: 24px" class="form-label mt-4">Группа</label>
-            <select class="form-select" style="font-size: 20px" name="gruppa">
-                <option>4332</option>
-                <option>4333</option>
-                <option>4335</option>
-                <option>4337</option>
+            <select class="form-select" id="productList" style="font-size: 20px" name="id">
+                @foreach (var product in Model.Item1)
+                {
+                    <option value="@product.IdG">@product.NumG</option>
+                }
             </select>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1" style="font-size: 24px" class="form-label mt-4">Чётность недели</label>
-            <select class="form-select" style="font-size: 20px" name="chetnost1">
-                <option>чётная</option>
-                <option>нечётная</option>
+            <select class="form-select" id="productList1" style="font-size: 20px" name="id1">
+                @foreach (var product in Model.Item2)
+                {
+                    <option value="@product.IdC">@product.NameC</option>
+                }
             </select>
         </div>
-        <button type="submit" style="font-size: 20px; width: 250px; margin-top: 30px" class="btn btn-primary">
+        <button type="submit" style="font-size: 20px; width: 250px; margin-top: 30px" asp-action="RaspisSelect" class="btn btn-primary">
             Показать расписание
         </button>
     </div>
 </form>
 
-<form method="post">
+<form asp-action="RaspisSelect1" method="get">
     <div style="margin-top: 40px">
         <h1 style="margin-left: auto; margin-right: auto;">
             Расписание преподавателя
         </h1>
         <div class="form-group">
             <label for="exampleInputEmail1" style="font-size: 24px" class="form-label mt-4">Преподаватель</label>
-            <select class="form-select" style="font-size: 20px" name="fio">
-                <option>Иванов Иван Иванович</option>
-                <option>Петров Петр Петрович</option>
+            <select class="form-select" id="productList3" style="font-size: 20px" name="id3">
+                @foreach (var product in Model.Item3)
+                {
+                    <option value="@product.IdU">@product.FioU</option>
+                }
             </select>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1" style="font-size: 24px" class="form-label mt-4">Чётность недели</label>
-            <select class="form-select" style="font-size: 20px" name="chetnost2">
-                <option>чётная</option>
-                <option>нечётная</option>
+            <select class="form-select" id="productList4" style="font-size: 20px" name="id4">
+                @foreach (var product in Model.Item2)
+                {
+                    <option value="@product.IdC">@product.NameC</option>
+                }
             </select>
         </div>
-        <button type="submit" style="font-size: 20px; width: 250px; margin-top: 30px" class="btn btn-primary">
+        <button type="submit" style="font-size: 20px; width: 250px; margin-top: 30px" asp-action="RaspisSelect1" class="btn btn-primary">
             Показать расписание
         </button>
     </div>

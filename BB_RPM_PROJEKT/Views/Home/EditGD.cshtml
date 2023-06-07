@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Группы и Дисциплины";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.GD
+
+<form asp-action="SaveGD" method="post" style="margin-top: 100px">
+    <div class="form-group" style="visibility: hidden">
+        <label asp-for="IdGD" style="font-size:20px">Id:</label>
+        <input asp-for="IdGD" style="font-size:20px" name="id" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="IdG" style="font-size:20px">Группа:</label>
+        <select asp-for="IdG" asp-items="@ViewBag.GroupList" style="font-size:20px" name="gr" class="form-control"></select>
+    </div>
+    <div class="form-group" style="margin-top: 20px" na>
+        <label asp-for="IdD" style="font-size:20px">Дисциплина:</label>
+        <select asp-for="IdD" asp-items="@ViewBag.DiscList" style="font-size:20px" name="di" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Обновить</button>
+</form>

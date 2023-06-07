@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Пользователи";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+@model List<BBLib.Models.UserRoleGroupcs>
+<div class="container" style="margin-top: 40px">
+    <h1 style="margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+        Пользователи
+    </h1>
+    <a asp-action="AddUser" class="btn btn-primary" style="margin-bottom: 20px; width: 250px; font-size: 18px; color: white">Добавить пользователя</a>
+    <table class="table table-hover" style="font-size:18px">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Логин</th>
+                <th scope="col">Пароль</th>
+                <th scope="col">Роль</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Группа</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @user.IdU
+                    </td>
+                    <td>
+                        @user.LoginU
+                    </td>
+                    <td>
+                        @user.PassU
+                    </td>
+                    <td>
+                        @user.RoleU
+                    </td>
+                    <td>
+                        @user.FioU
+                    </td>
+                    <td>
+                        @user.GroupU
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditUser", new { id = user.IdU })" style="margin-top: 20px">Изменить</a>
+                    </td>
+                    <td>
+                        <form asp-action="DeleteU" asp-route-id="@user.IdU" method="post">
+                            <input type="submit" value="Удалить" style="border-color:transparent; background-color:transparent" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

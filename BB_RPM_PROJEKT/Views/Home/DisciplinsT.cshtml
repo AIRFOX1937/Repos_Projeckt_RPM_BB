@@ -3,34 +3,17 @@
     Layout = "~/Views/Shared/_LayoutT.cshtml";
 }
 
-<div style="margin-top: 40px">
-    <h1 style="margin-left: auto; margin-right: auto;">
-        Инженерная компьютерная графика
+<div class="container" style="margin-top: 40px">
+    <h1 style="margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+        Дисциплины
     </h1>
-    <div class="container" style="margin-top: 40px">
-        <div style="width: 180px; padding-bottom: 20px">
-            <a href="/Home/ikg_prep_ikg">
-                <div class="vidis">
-                    <img src="https://i.ibb.co/g9JGSNR/doki.png" />
-                    <label>Лекции</label>
-                </div>
-            </a>
-        </div>
-        <div style="width: 330px; padding-bottom: 20px">
-            <a href="/Home/ikg_prep_ikg">
-                <div class="vidis">
-                    <img src="https://i.ibb.co/g9JGSNR/doki.png" />
-                    <label>Практические работы</label>
-                </div>
-            </a>
-        </div>
-        <div style="width: 330px">
-            <a href="/Home/ikg_prep_ikg">
-                <div class="vidis">
-                    <img src="https://i.ibb.co/g9JGSNR/doki.png" />
-                    <label>Лабораторные работы</label>
-                </div>
-            </a>
-        </div>
+    @model List<BBLib.Models.UsDi>
+    <div class="container">
+        @foreach (var disc in Model)
+        {
+            <div class="predmet">
+                <a style="font-weight: bold; font-size: 22px" name="btn" asp-route-id="@disc.NameD" asp-action="PapkiT">@disc.NameD</a>
+            </div>
+        }
     </div>
 </div>

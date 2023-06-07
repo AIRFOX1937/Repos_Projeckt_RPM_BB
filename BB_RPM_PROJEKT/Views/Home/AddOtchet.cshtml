@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Дисциплины";
+}
+
+@model BBLib.Models.Otcheti
+
+<form asp-action="AddO" method="post" style="margin-top: 100px">
+    <div class="form-group">
+        <label asp-for="Ssilka" style="font-size:20px">Ссылка на отчёт:</label>
+        <input asp-for="Ssilka" style="font-size:20px" name="im" class="form-control" />
+    </div>
+    <input name="a" value="@Model.IdD" style="display:none;" />
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Добавить</button>
+</form>

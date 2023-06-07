@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Пользователи";
+    Layout = "~/Views/Shared/_LayoutA.cshtml";
+}
+
+@model BBLib.Models.Doki1
+
+<form asp-action="SaveDo" method="post" style="margin-top: 100px">
+    <div class="form-group" style="visibility: hidden">
+        <label asp-for="IdDo" style="font-size:20px">Id:</label>
+        <input asp-for="IdDo" style="font-size:20px" name="id" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="NameV" style="font-size:20px">Вид:</label>
+        <select asp-for="NameV" asp-items="@ViewBag.VidList" style="font-size:20px" name="vi" class="form-control"></select>
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="NameV" style="font-size:20px">Дисциплина:</label>
+        <select asp-for="NameV" asp-items="@ViewBag.DiscList" style="font-size:20px" name="di" class="form-control"></select>
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="NameDo" style="font-size:20px">Название:</label>
+        <input asp-for="NameDo" style="font-size:20px" name="na" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px">
+        <label asp-for="SsilkaD" style="font-size:20px">Ссылка:</label>
+        <input asp-for="SsilkaD" style="font-size:20px" name="ss" class="form-control" />
+    </div>
+    <div class="form-group" style="margin-top: 20px" na>
+        <label style="font-size:20px">Нужен отчёт:</label>
+        <select style="font-size:20px" name="fl" class="form-control">
+            <option value="1">Да</option>
+            <option value="0">Нет</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 200px; font-size: 18px">Обновить</button>
+</form>

@@ -1,41 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Главная";
+    ViewData["Title"] = "Новости";
     Layout = "~/Views/Shared/_LayoutT.cshtml";
 }
 
-<div style="background-color: #0d6efd; height: 35px; text-align:center; width: 120px; color: white; font-size: 20px;
-            margin-top: 30px; margin-left: auto; margin-right: 0;">
-    <label>чётная</label>
-</div>
 <div class="container" style="margin-top: 40px">
     <h1 style="margin-left: auto; margin-right: auto; margin-bottom: 30px;">
         Новости
     </h1>
+    @model List<BBLib.Models.News>
 
-    <div class="minidiv" style="border: solid 5px #0d6efd; padding: 30px; ">
-        <img src="https://kai.ru/image/journal/article?img_id=12737924&t=1678447656054" height="300" style="margin-right: 30px"/>
-        <div id="tekst" style="min-width: 500px">
-            <label style="font-weight: bold; font-size: 22px">КНИТУ-КАИ стал площадкой проведения сразу 7 олимпиад</label>
-            <label style="font-size: 20px; margin-top: 20px">На этой неделе на базе КНИТУ-КАИ прошли Всероссийские олимпиады школьников по математике, физике, информатике и экономике.</label>
+    @foreach (var news in Model)
+    {
+        <div>
+            <div class="minidiv" style="border: solid 5px #0d6efd; padding: 30px; margin-top: 25px ">
+                <img src="@news.Img" height="300" style="margin-right: 30px" />
+                <div id="tekst" style="min-width: 500px">
+                    <a style="font-weight: bold; font-size: 22px" asp-route-id="@news.Id" asp-action="News2">@news.Zag</a>
+                    <label style="font-size: 20px; margin-top: 20px">@news.Txt</label>
+                </div>
+                <label id="date" style="font-weight: bold; color: #0d6efd; font-size: 23px;">@news.DateN.ToString("dd/MM/yyyy")</label>
+            </div>
         </div>
-        <label id="date" style="font-weight: bold; color: #0d6efd; font-size: 23px;">10.03.2023</label>
-    </div>
-
-    <div class="minidiv" style="margin-top: 30px; border: solid 5px #0d6efd; padding: 30px; ">
-        <img src="https://kai.ru/image/journal/article?img_id=12736790&t=1678365386478" height="300" style="margin-right: 30px" />
-        <div id="tekst" style="min-width: 500px">
-            <label style="font-weight: bold; font-size: 22px">Зиннуру Гизатуллину присвоено учёное звание профессора</label>
-            <label style="font-size: 20px; margin-top: 25px">Профессору кафедры систем автоматизированного проектирования КНИТУ-КАИ Зиннуру Гизатуллину присвоено учёного звание профессора.</label>
-        </div>
-        <label id="date" style="font-weight: bold; color: #0d6efd; font-size: 23px;">09.03.2023</label>
-    </div>
-
-    <div class="minidiv" style="margin-top: 30px; border: solid 5px #0d6efd; padding: 30px; ">
-        <img src="https://kai.ru/image/journal/article?img_id=12735943&t=1678349903594" height="300" style="margin-right: 30px" />
-        <div id="tekst" style="min-width: 500px">
-            <label style="font-weight: bold; font-size: 22px">КНИТУ-КАИ встретил новую дату ярким концертом</label>
-            <label style="font-size: 20px; margin-top: 25px">Двухчасовое действие включало в себя экскурс в историю университета, куда гармонично были вплетены концертные номера.</label>
-        </div>
-        <label id="date" style="font-weight: bold; color: #0d6efd; font-size: 23px;">07.03.2023</label>
-    </div>
+    }
 </div>

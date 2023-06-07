@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Новости";
+}
+
+<div  style="margin-top: 40px">
+    @model BBLib.Models.News
+    <div style="position: relative">
+        <label style="font-weight: bold; font-size: 24px; margin-bottom: 30px">@Model.Zag</label>
+        <label id="date" style="font-weight: bold; color: #0d6efd; font-size: 23px; position: absolute; right: 0">@Model.DateN.ToString("dd/MM/yyyy")</label>
+        <img src="@Model.Img" height="500" style="display: block; margin: auto;" />
+        <label style="font-size: 20px; margin-top: 20px">@Model.Txt</label>
+        <separator/>
+        <label style="font-size: 20px; margin-top: 20px">@Model.Txt1</label>
+    </div>
+</div>

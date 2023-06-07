@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Дисциплины";
+    Layout = "~/Views/Shared/_LayoutT.cshtml";
+}
+
+@model List<BBLib.Models.Otcheti1>
+<div class="container" style="margin-top: 40px">
+    <h1 style="margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+        @ViewBag.D: @ViewBag.V: @ViewBag.Z
+    </h1>
+    <table class="table table-hover" style="font-size:18px">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">ФИО студента</th>
+                <th scope="col">Группа</th>
+                <th scope="col">Задание</th>
+                <th scope="col">Дата выполнения</th>
+                <th scope="col">Отчёт</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @user.IdO
+                    </td>
+                    <td>
+                        @user.FioU
+                    </td>
+                    <td>
+                        @user.NumG
+                    </td>
+                    <td>
+                        @user.NameD
+                    </td>
+                    <td>
+                        @user.DateO
+                    </td>
+                    <td>
+                        <a href="@user.Ssilka">@user.Ssilka</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
